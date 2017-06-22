@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function UpdaterFunction(text, delimitter)
+{
+	document.getElementById("updatehere").innerHTML = text.CustomizedSplit(delimitter);
+
+}
+
+String.prototype.CustomizedSplit = function CustomizedSplit(delimitter) {
+    var arr = [];
+    var temp = "";
+    for (i = 0; i < this.length; i++)
+    {
+	if( this[i] !== delimitter )
+	{
+		temp = temp + this[i];
+	}
+	else
+	{
+		arr.push(temp);
+		temp = ""
+		
+	}
+    } 
+    return arr;
+};
+
+</script>
+</head>
+<body>
+
+
+
+<p id="updatehere"></p>
+<button onclick="UpdaterFunction('a,bc,d,e,f',',')">Try it</button>
+
+</body>
+</html>
